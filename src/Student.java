@@ -1,9 +1,23 @@
-public class Student {
-   public String Nom;
-   public String Adresse;
-   public  Integer IdStudent;
+import java.util.Scanner;
 
-   public void call(){
-       System.out.println("calling..!");
+public class Student {
+   public  String IdStudent;
+   public String Name;
+   public String Adresse;
+
+   public void modifyStudent(){
+
+      System.out.println("Enter the Name of Student");
+      this.Name=new Scanner(System.in).nextLine();
+
+
+      System.out.println("Enter the Adresse of Student");
+      this.Adresse=new Scanner(System.in).nextLine();
+
+      System.out.println("Student of this Id is modify");
+
+
    }
+
+
 }
