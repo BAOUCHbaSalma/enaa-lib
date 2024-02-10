@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Menu {
     public void listChoice() {
         Library lb = new Library();
+        Book BK =new Book();
 
         int choice;
         do {
@@ -14,11 +15,14 @@ public class Menu {
             System.out.println("2-- Afficher les livres");
             System.out.println("3-- Supprimer un livre");
             System.out.println("4-- Modifier les détails d'un livre");
-            System.out.println("5-- Chercher un livre");
-            System.out.println("6-- Ajouter un Apprenant");
-            System.out.println("7-- Afficher un Apprenant");
-            System.out.println("8-- Modifier un Apprenant");
-            System.out.println("9-- Quitter");
+            System.out.println("5-- Reserver un livre");
+            System.out.println("6-- Afficher les livres reserver");
+            System.out.println("7-- Chercher un livre");
+            System.out.println("8-- Ajouter un Apprenant");
+            System.out.println("9-- Afficher un Apprenant");
+            System.out.println("10-- Modifier un Apprenant");
+            System.out.println("11-- Quitter");
+
             System.out.println("                                                 ");
             System.out.print(" Entrez votre choix  ====> ");
             choice = new Scanner(System.in).nextInt();
@@ -50,15 +54,22 @@ public class Menu {
 
                     break;
                 case 5:
-                  lb.searchBook();
+                    lb.reserve();
+
                     break;
                 case 6:
-                    lb.addStudent();
+//                   lb.showBookRe();
                     break;
                 case 7:
-                    lb.showStudent();
+                  lb.searchBook();
                     break;
                 case 8:
+                    lb.addStudent();
+                    break;
+                case 9:
+                    lb.showStudent();
+                    break;
+                case 10:
                     if (lb.Array_Student.isEmpty()){
                         System.out.println("No Student to edit");
                     }else {
@@ -71,13 +82,13 @@ public class Menu {
                         }
                     }
                     break;
-                case 9:
+                case 11:
                     System.out.println("Au revoir !");
                     break;
                 default:
                     System.out.println("Choix invalide !");
             }
-        } while (choice != 7);
+        } while (choice != 11);
 
     }
 }
@@ -88,13 +99,4 @@ public class Menu {
 
 
 
-//    public void addStudent() {
-//        // Implement logic to add a student
-//        System.out.println("Ajouter un Apprenant");
-//    }
-//
-//    public void showStudent() {
-//        // Implement logic to display a student
-//        System.out.println("Afficher un Apprenant");
-//    }
-//}
+

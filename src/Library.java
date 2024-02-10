@@ -10,6 +10,8 @@ public class Library {
     ArrayList<Book> Array_book = new ArrayList<>();
     ArrayList<Student> Array_Student = new ArrayList<>();
 
+//    ArrayList<Book> Array_reserverR = new ArrayList<Book>();
+
      void addBook() {
 
         Book newBook= new Book();
@@ -112,19 +114,58 @@ public class Library {
 
     }
 
-    public void showStudent(){
+    public void showStudent() {
         System.out.println("                                       ");
         System.out.println("************* List of Student**************");
         System.out.println("                                            ");
-        for(int i=0;i<Array_Student.size();i++){
-            System.out.println("The Id of Student : "+Array_Student.get(i).IdStudent);
-            System.out.println("The Name of Student : "+Array_Student.get(i).Name);
-            System.out.println("The Adresse of Student : "+Array_Student.get(i).Adresse);
+        for (Student student : Array_Student) {
+            System.out.println("The Id of Student : " + student.IdStudent);
+            System.out.println("The Name of Student : " + student.Name);
+            System.out.println("The Adresse of Student : " + student.Adresse);
+
+            if (student.books.isEmpty()) {
+                System.out.println("He did not to reserve any book !");
+            } else {
+                student.books.forEach(book -> System.out.println("The book name " + book.TitLe));
+            }
+
 
             System.out.println("                                                ");
             System.out.println("_________________________________________________");
         }
-
     }
 
+
+
+    public void reserve(){
+
+
+        System.out.println("Enter the Id Book  :");
+        String IdBOOK = new Scanner(System.in).nextLine();
+
+        for (Book book : Array_book){
+
+            if (book.IdBook.equalsIgnoreCase(IdBOOK)){
+
+                System.out.println("Enter the Id Of student   : ");
+                String idStudent = new Scanner(System.in).nextLine();
+
+                for (Student student :Array_Student){
+                    if (student.IdStudent.equalsIgnoreCase(idStudent)){
+                        book.student = student;
+                        student.books.add(book);
+
+                        System.out.println("THE BOOK IS RESERVER");
+                    }
+                }
+                break;
+            }
+
+        }
+
+    }
+    
+
 }
+
+

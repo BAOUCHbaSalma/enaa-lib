@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Student {
@@ -5,6 +6,7 @@ public class Student {
    public String Name;
    public String Adresse;
 
+   ArrayList<Book> books = new ArrayList<>();
    public void modifyStudent(){
 
       System.out.println("Enter the Name of Student");
