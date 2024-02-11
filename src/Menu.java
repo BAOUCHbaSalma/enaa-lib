@@ -58,7 +58,7 @@ public class Menu {
 
                     break;
                 case 6:
-//                   lb.showBookRe();
+//                   lb.dropReservation();
                     break;
                 case 7:
                   lb.searchBook();

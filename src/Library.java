@@ -143,29 +143,45 @@ public class Library {
         System.out.println("Enter the Id Book  :");
         String IdBOOK = new Scanner(System.in).nextLine();
 
-        for (Book book : Array_book){
+        boolean found = false;
 
-            if (book.IdBook.equalsIgnoreCase(IdBOOK)){
 
-                System.out.println("Enter the Id Of student   : ");
-                String idStudent = new Scanner(System.in).nextLine();
+        for (Book book : Array_book) {
 
-                for (Student student :Array_Student){
-                    if (student.IdStudent.equalsIgnoreCase(idStudent)){
-                        book.student = student;
-                        student.books.add(book);
+            if (book.IdBook.equalsIgnoreCase(IdBOOK)) {
 
-                        System.out.println("THE BOOK IS RESERVER");
+                for (int i = 0; i < Array_Student.get(i).books.size(); i++) {
+
+                    while (book.IdBook.equalsIgnoreCase(Array_Student.get(i).books.get(i).IdBook)) {
+                        System.out.println("This Book is Already ");
+                        System.out.println("Enter the other Id Book  :");
+                        IdBOOK = new Scanner(System.in).nextLine();
+                        found = true;
                     }
-                }
-                break;
-            }
 
+
+                }if (!found){
+                    System.out.println("Enter the Id Of student   : ");
+                    String idStudent = new Scanner(System.in).nextLine();
+
+                    for (Student student : Array_Student) {
+                        if (student.IdStudent.equalsIgnoreCase(idStudent)) {
+                            book.student = student;
+                            student.books.add(book);
+
+                            System.out.println("THE BOOK IS RESERVER");
+                        }
+                    }
+                    break;
+
+                }
+
+            }
+        }
         }
 
     }
-    
 
-}
+
 
 
