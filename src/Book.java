@@ -24,7 +24,7 @@ public  Student student;
         this.DatePublication = new Scanner(System.in).nextInt();
 
 
-        System.out.println("BOOK of this Id is modify");
+        System.out.println("Book of this Id is modify");
 
     }
 

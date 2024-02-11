@@ -11,18 +11,18 @@ public class Menu {
             System.out.println("                                              ");
             System.out.println("~~~~~~~~~~~~~~~~~~~~~ Menu ~~~~~~~~~~~~~~~~~~~");
             System.out.println("                                               ");
-            System.out.println("1-- Ajouter un livre");
-            System.out.println("2-- Afficher les livres");
-            System.out.println("3-- Supprimer un livre");
-            System.out.println("4-- Modifier les détails d'un livre");
-            System.out.println("5-- Reserver un livre");
-            System.out.println("6-- Annuler la reservation d'un livre");
-            System.out.println("7-- Chercher un livre");
-            System.out.println("8-- Ajouter un Apprenant");
-            System.out.println("9-- Afficher un Apprenant");
-            System.out.println("10-- Modifier un Apprenant");
-            System.out.println("11-- Supprimer un Apprenant");
-            System.out.println("12-- Quitter");
+            System.out.println("1-- Add a book");
+            System.out.println("2-- Show books");
+            System.out.println("3-- Delete a book");
+            System.out.println("4-- Edit book details");
+            System.out.println("5-- Find a book");
+            System.out.println("6-- Reserve a book");
+            System.out.println("7-- Cancel a book reservation");
+            System.out.println("8-- Add a Student");
+            System.out.println("9-- Show a Student");
+            System.out.println("10-- Modify a Student");
+            System.out.println("11-- Delete a Student");
+            System.out.println("12-- Close");
 
             System.out.println("                                                 ");
             System.out.print(" Entrez votre choix  ====> ");
@@ -55,14 +55,16 @@ public class Menu {
 
                     break;
                 case 5:
-                    lb.reserve();
+                    lb.searchBook();
+
 
                     break;
                 case 6:
-                  lb.dropReservation();
+                    lb.reserve();
+
                     break;
                 case 7:
-                  lb.searchBook();
+                    lb.dropReservation();
                     break;
                 case 8:
                     lb.addStudent();
@@ -87,10 +89,10 @@ public class Menu {
                     lb.dropStudent();
                     break;
                 case 12:
-                System.out.println("Au revoir !");
+                System.out.println("BY BY !");
                 break;
                 default:
-                    System.out.println("Choix invalide !");
+                    System.out.println("Invalid choice!");
             }
         } while (choice != 12);
 

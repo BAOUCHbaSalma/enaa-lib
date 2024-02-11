@@ -49,7 +49,7 @@ public class Library {
          if (Array_book.isEmpty()){
              System.out.println("ARRAY IS EMPTY");
          }else {
-             System.out.println("~~~~~~~~~~Les livres~~~~~~~~~~");
+             System.out.println("~~~~~~~~~~THE BOOKS~~~~~~~~~~");
              System.out.println("                              ");
              for (Book book : Array_book) {
 
@@ -69,7 +69,7 @@ public class Library {
         for (int i =0;i<Array_book.size();i++){
             if(Objects.equals(Id, Array_book.get(i).IdBook)){
                 Array_book.remove(i);
-                System.out.println("BOOK of this Id is remove");
+                System.out.println("Book of this Id is removed");
 
 
             }
@@ -92,7 +92,7 @@ public class Library {
 
 
             }else{
-                System.out.println("Id incorrect , Please try again");
+                System.out.println("Incorrect Id, please try again");
             }
         }
 
@@ -142,7 +142,7 @@ public class Library {
         for (int i =0;i<Array_Student.size();i++){
             if(Objects.equals(Id, Array_Student.get(i).IdStudent)){
                 Array_Student.remove(i);
-                System.out.println("Student of this Id is remove");
+                System.out.println("Student of this Id is removed");
 
 
             }
@@ -184,12 +184,17 @@ public class Library {
                             book.student = student;
                             student.books.add(book);
 
-                            System.out.println("THE BOOK IS RESERVER");
+                            System.out.println("The book is reserved");
+                        }
+                        else
+                        {
+                            System.out.println("The id of student is not valid !!");
                         }
                     }
                     break;
 
                 }
+
 
             }
         }
