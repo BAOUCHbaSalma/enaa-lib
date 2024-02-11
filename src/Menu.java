@@ -16,7 +16,7 @@ public class Menu {
             System.out.println("3-- Supprimer un livre");
             System.out.println("4-- Modifier les détails d'un livre");
             System.out.println("5-- Reserver un livre");
-            System.out.println("6-- Afficher les livres reserver");
+            System.out.println("6-- Annuler la reservation d'un livre");
             System.out.println("7-- Chercher un livre");
             System.out.println("8-- Ajouter un Apprenant");
             System.out.println("9-- Afficher un Apprenant");
@@ -58,7 +58,7 @@ public class Menu {
 
                     break;
                 case 6:
-//                   lb.dropReservation();
+                  lb.dropReservation();
                     break;
                 case 7:
                   lb.searchBook();

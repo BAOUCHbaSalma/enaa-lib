@@ -153,7 +153,7 @@ public class Library {
                 for (int i = 0; i < Array_Student.get(i).books.size(); i++) {
 
                     while (book.IdBook.equalsIgnoreCase(Array_Student.get(i).books.get(i).IdBook)) {
-                        System.out.println("This Book is Already ");
+                        System.out.println("This Book is Already reserved  ");
                         System.out.println("Enter the other Id Book  :");
                         IdBOOK = new Scanner(System.in).nextLine();
                         found = true;
@@ -178,6 +178,35 @@ public class Library {
 
             }
         }
+        }
+
+        public void dropReservation(){
+         
+
+            System.out.println("Enter the id of the book you want to cancel their reservation : ");
+            String idBook =new Scanner(System.in).nextLine() ;
+
+            boolean found = false;
+
+            for (Book book : Array_book) {
+                if (book.IdBook.equalsIgnoreCase(idBook)) {
+                    found = true;
+
+                    if (book.student == null) {
+                        System.out.println("This book is not reserved ");
+                    } else {
+                        Student student = book.student;
+                        student.books.remove(book);
+                        book.student = null;
+                        System.out.println("Reservation canceled successfully");
+                    }
+                    break;
+                }
+            }
+            if (!found) {
+                System.out.println("Book with this id not found");
+            }
+
         }
 
     }
