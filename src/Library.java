@@ -135,6 +135,21 @@ public class Library {
         }
     }
 
+    public void dropStudent(){
+         
+        System.out.println("Enter id of the student you want to remove : ");
+        String Id=new Scanner(System.in).nextLine();
+        for (int i =0;i<Array_Student.size();i++){
+            if(Objects.equals(Id, Array_Student.get(i).IdStudent)){
+                Array_Student.remove(i);
+                System.out.println("Student of this Id is remove");
+
+
+            }
+        }
+
+    }
+
 
 
     public void reserve(){
@@ -181,7 +196,7 @@ public class Library {
         }
 
         public void dropReservation(){
-         
+
 
             System.out.println("Enter the id of the book you want to cancel their reservation : ");
             String idBook =new Scanner(System.in).nextLine() ;

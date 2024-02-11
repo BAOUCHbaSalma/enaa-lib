@@ -21,7 +21,8 @@ public class Menu {
             System.out.println("8-- Ajouter un Apprenant");
             System.out.println("9-- Afficher un Apprenant");
             System.out.println("10-- Modifier un Apprenant");
-            System.out.println("11-- Quitter");
+            System.out.println("11-- Supprimer un Apprenant");
+            System.out.println("12-- Quitter");
 
             System.out.println("                                                 ");
             System.out.print(" Entrez votre choix  ====> ");
@@ -83,12 +84,15 @@ public class Menu {
                     }
                     break;
                 case 11:
-                    System.out.println("Au revoir !");
+                    lb.dropStudent();
                     break;
+                case 12:
+                System.out.println("Au revoir !");
+                break;
                 default:
                     System.out.println("Choix invalide !");
             }
-        } while (choice != 11);
+        } while (choice != 12);
 
     }
 }
